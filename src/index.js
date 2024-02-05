@@ -7,7 +7,7 @@
  * @param {boolean} hasSymbols - Symbols dans le mdp
  * @returns MDP
  */
-export const generateString = (
+export const generatePassword = (
   length,
   hasLowerCase,
   hasUpperCase,
@@ -31,27 +31,20 @@ export const generateString = (
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
-
   return result;
 };
 
-//console.log(generateString(10, true, true, true, true));
+const lowercaseChecked = document.getElementById("password-lowercase").checked;
+const uppercaseChecked = document.getElementById("password-uppercase").checked;
+const numbersChecked = document.getElementById("password-numbers").checked;
+const symbolsChecked = document.getElementById("password-symbols").checked;
 
-const lowercase = document.getElementById("password-lowercase");
-const uppercase = document.getElementById("password-uppercase");
-const numbers = document.getElementById("password-numbers");
-const symbols = document.getElementById("password-symbols");
-
-const checkboxIsChecked = () => {
-  if (numbers.checked == true) {
-    //alert("checkbox checked");
-    console.log(generateString(10, false, false, true, false));
-  } else if (lowercase.checked == true) {
-    console.log(generateString(10, true, false, false, false));
-  }
-};
-
-lowercase.addEventListener("change", checkboxIsChecked);
-uppercase.addEventListener("change", checkboxIsChecked);
-numbers.addEventListener("change", checkboxIsChecked);
-symbols.addEventListener("change", checkboxIsChecked);
+console.log(
+  generatePassword(
+    10,
+    lowercaseChecked,
+    uppercaseChecked,
+    numbersChecked,
+    symbolsChecked,
+  ),
+);
