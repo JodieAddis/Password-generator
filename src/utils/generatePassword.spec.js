@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { generatePassword } from "./index.js";
+import { generatePassword } from "./generatePassword.js";
 
 describe("GenerateString Suite Unit Test", () => {
   it("should be return something", () => {
