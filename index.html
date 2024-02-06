@@ -7,13 +7,22 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="dist/output.css" />
   </head>
-  <body>
-    <main>
-      <h1 class="text-balticSea">Password Generator</h1>
-      <div>
-        <p>P4$5W0rD!</p>
-        <div>
-          <span id="display-password"></span>
+  <body class="bg-darkBalticSea">
+    <main class="flex h-screen flex-col items-center justify-center">
+      <h1 class="text-topaz self-center text-center text-2xl font-bold">
+        Password Generator
+      </h1>
+      <div
+        class="text-mischka mb-6 flex h-20 w-1/3 flex-row justify-between bg-balticSea px-6"
+      >
+        <p
+          id="display-password"
+          class="text-mischka flex self-center text-2xl font-bold"
+        >
+          P4$5W0rD!
+        </p>
+        <div class="flex self-center">
+          <span></span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -32,9 +41,9 @@
         </div>
       </div>
 
-      <form class="form">
-        <div class="form-group">
-          <label for="password-length">Character Length</label>
+      <form class="form text-mischka h-1/2 w-1/3 bg-balticSea px-6 capitalize">
+        <div class="form-group flex flex-col">
+          <label for="password-length" class="text-lg">Character Length</label>
 
           <input
             type="range"
@@ -43,37 +52,42 @@
             value="10"
             id="password-length"
             name="password-length"
+            class="accent-mintGreen range-sm bg-darkBalticSea step rounded-none"
           />
         </div>
-        <div class="form-group">
+        <div class="form-group mb-2">
           <input
             type="checkbox"
             id="password-uppercase"
             name="password-uppercase"
+            class="accent-mintGreen text-darkBalticSea"
           />
           <label for="password-uppercase">include uppercase letters</label>
         </div>
-        <div class="form-group">
+        <div class="form-group mb-2">
           <input
             type="checkbox"
             id="password-lowercase"
             name="password-lowercase"
+            class="accent-mintGreen"
           />
           <label for="password-lowercase">include lowercase letters</label>
         </div>
-        <div class="form-group">
+        <div class="form-group mb-2">
           <input
             type="checkbox"
             id="password-numbers"
             name="password-numbers"
+            class="accent-mintGreen"
           />
           <label for="password-numbers">include numbers</label>
         </div>
-        <div class="form-group">
+        <div class="form-group mb-2">
           <input
             type="checkbox"
             id="password-symbols"
             name="password-symbols"
+            class="accent-mintGreen"
           />
           <label for="password-symbols">include symbols</label>
         </div>
@@ -91,8 +105,12 @@
           </div>
         </div>
 
-        <div>
-          <button type="submit" class="submit_btn" id="submit_btn">
+        <div class="flex justify-center">
+          <button
+            type="submit"
+            class="bg-mintGreen text-darkBalticSea text-center font-bold"
+            id="submit_btn"
+          >
             Generate →
           </button>
         </div>
