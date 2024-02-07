@@ -8,7 +8,9 @@ const handleSubmit = () => {
   const symbolsChecked = document.getElementById("password-symbols");
   const form = document.querySelector(".form");
   const displayPassword = document.querySelector("#display-password");
-  //console.log(displayPassword);
+
+  const copyPassword = document.querySelector("#copiedText");
+  const copyBtn = document.querySelector("#copyText");
 
   const handleCreatePassword = (e) => {
     e.preventDefault();
@@ -22,7 +24,13 @@ const handleSubmit = () => {
     console.log(password);
     displayPassword.innerHTML = password;
   };
+  const clipboardText = (password) => {
+    navigator.clipboard.writeText(password.value);
+    alert("Copied password is: " + password.value);
+  };
+
   form.addEventListener("submit", handleCreatePassword);
+  copyBtn.addEventListener("click", clipboardText);
 };
 
 handleSubmit();
