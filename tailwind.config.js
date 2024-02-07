@@ -12,6 +12,9 @@ export const theme = {
       coral: "#FB7C58",
       yellow: "#F8CD65",
     },
+    fontFamily: {
+      jetbrains: ['"JetBrainsMono"', "serif"],
+    },
   },
 };
 export const plugins = [];

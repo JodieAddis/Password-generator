@@ -7,20 +7,23 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="dist/output.css" />
   </head>
-  <body class="bg-darkBalticSea">
-    <main class="flex h-screen flex-col items-center justify-center">
-      <h1 class="self-center text-center text-2xl font-bold text-topaz">
+  <body class="h-screen bg-darkBalticSea">
+    <main class="flex h-5/6 flex-col items-center justify-center">
+      <h1 class="mb-4 self-center text-center text-2xl font-bold text-topaz">
         Password Generator
       </h1>
       <div
-        class="mb-6 flex h-20 w-1/3 flex-row justify-between bg-balticSea px-6 text-mischka"
+        class="mb-4 flex h-16 w-11/12 flex-row justify-between bg-balticSea px-4 text-mischka"
       >
         <p
           id="display-password"
           class="flex self-center text-2xl font-bold text-mischka"
         ></p>
         <div class="flex self-center">
-          <span id="copiedText"></span>
+          <span
+            id="copiedText"
+            class="mr-2 text-lg font-bold uppercase text-mintGreen"
+          ></span>
           <button id="copyBtn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -41,10 +44,16 @@
         </div>
       </div>
 
-      <form class="form h-1/2 w-1/3 bg-balticSea px-6 capitalize text-mischka">
-        <div class="form-group flex flex-col">
-          <label for="password-length" class="text-lg">Character Length</label>
-
+      <form
+        class="form w-11/12 bg-balticSea px-4 py-4 capitalize text-mischka lg:h-1/2 lg:w-1/3"
+      >
+        <div class="form-group mb-8 flex flex-col">
+          <div class="flex flex-row justify-between">
+            <label for="password-length" class="mb-3 text-lg"
+              >Character Length</label
+            >
+            <p class="text-2xl font-bold text-mintGreen">10</p>
+          </div>
           <input
             type="range"
             min="0"
@@ -52,7 +61,7 @@
             value="10"
             id="password-length"
             name="password-length"
-            class="range-sm step rounded-none bg-darkBalticSea accent-mintGreen"
+            class="range-sm bg-darkBalticSea accent-mintGreen"
           />
         </div>
         <div class="form-group mb-2">
@@ -62,7 +71,9 @@
             name="password-uppercase"
             class="text-darkBalticSea accent-mintGreen"
           />
-          <label for="password-uppercase">include uppercase letters</label>
+          <label for="password-uppercase" class="ml-3"
+            >include uppercase letters</label
+          >
         </div>
         <div class="form-group mb-2">
           <input
@@ -71,7 +82,9 @@
             name="password-lowercase"
             class="accent-mintGreen"
           />
-          <label for="password-lowercase">include lowercase letters</label>
+          <label for="password-lowercase" class="ml-3"
+            >include lowercase letters</label
+          >
         </div>
         <div class="form-group mb-2">
           <input
@@ -80,20 +93,22 @@
             name="password-numbers"
             class="accent-mintGreen"
           />
-          <label for="password-numbers">include numbers</label>
+          <label for="password-numbers" class="ml-3">include numbers</label>
         </div>
-        <div class="form-group mb-2">
+        <div class="form-group mb-5">
           <input
             type="checkbox"
             id="password-symbols"
             name="password-symbols"
-            class="accent-mintGreen"
+            class="rounded-none border-none accent-mintGreen"
           />
-          <label for="password-symbols">include symbols</label>
+          <label for="password-symbols" class="ml-3">include symbols</label>
         </div>
 
-        <div>
-          <p>strength</p>
+        <div
+          class="mb-4 flex h-16 justify-between bg-darkBalticSea px-4 text-lg font-bold uppercase text-topaz"
+        >
+          <p class="self-center">strength</p>
           <div>
             <span></span>
             <div>
@@ -108,7 +123,7 @@
         <div class="flex justify-center">
           <button
             type="submit"
-            class="bg-mintGreen text-center font-bold text-darkBalticSea"
+            class="h-14 w-full bg-mintGreen text-center text-base font-bold uppercase text-darkBalticSea"
             id="submit_btn"
           >
             Generate →
