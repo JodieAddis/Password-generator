@@ -1,4 +1,5 @@
 import { generatePassword } from "./utils/generatePassword.js";
+import { clipboardText } from "./utils/clipboardText.js";
 
 const handleSubmit = () => {
   const lowercaseChecked = document.getElementById("password-lowercase");
@@ -9,10 +10,7 @@ const handleSubmit = () => {
   const form = document.querySelector(".form");
   const displayPassword = document.querySelector("#display-password");
 
-  const copyPassword = document.querySelector("#copiedText");
-  const copyBtn = document.querySelector("#copyText");
-
-  const handleCreatePassword = (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
     const password = generatePassword(
       10,
@@ -21,16 +19,9 @@ const handleSubmit = () => {
       numbersChecked.checked,
       symbolsChecked.checked,
     );
-    console.log(password);
     displayPassword.innerHTML = password;
-  };
-  const clipboardText = (password) => {
-    navigator.clipboard.writeText(password.value);
-    alert("Copied password is: " + password.value);
-  };
-
-  form.addEventListener("submit", handleCreatePassword);
-  copyBtn.addEventListener("click", clipboardText);
+    clipboardText(password);
+  });
 };
 
 handleSubmit();
