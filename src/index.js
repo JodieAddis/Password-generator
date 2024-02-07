@@ -1,4 +1,5 @@
 import { generatePassword } from "./utils/generatePassword.js";
+import { clipboardText } from "./utils/clipboardText.js";
 
 const handleSubmit = () => {
   const lowercaseChecked = document.getElementById("password-lowercase");
@@ -8,9 +9,8 @@ const handleSubmit = () => {
   const symbolsChecked = document.getElementById("password-symbols");
   const form = document.querySelector(".form");
   const displayPassword = document.querySelector("#display-password");
-  //console.log(displayPassword);
 
-  const handleCreatePassword = (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
     const password = generatePassword(
       10,
@@ -19,10 +19,9 @@ const handleSubmit = () => {
       numbersChecked.checked,
       symbolsChecked.checked,
     );
-    console.log(password);
     displayPassword.innerHTML = password;
-  };
-  form.addEventListener("submit", handleCreatePassword);
+    clipboardText(password);
+  });
 };
 
 handleSubmit();
