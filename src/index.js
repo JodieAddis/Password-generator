@@ -1,5 +1,6 @@
 import { generatePassword } from "./utils/generatePassword.js";
 import { clipboardText } from "./utils/clipboardText.js";
+import { currentLength } from "./utils/currentLength.js";
 
 const handleSubmit = () => {
   const lowercaseChecked = document.getElementById("password-lowercase");
@@ -8,7 +9,6 @@ const handleSubmit = () => {
   const symbolsChecked = document.getElementById("password-symbols");
   const form = document.querySelector(".form");
   const displayPassword = document.querySelector("#display-password");
-  const lengthDisplay = document.querySelector("#lengthDisplay");
   const passwordLength = document.querySelector("#password-length");
 
   form.addEventListener("submit", (e) => {
@@ -23,7 +23,8 @@ const handleSubmit = () => {
     displayPassword.innerHTML = password;
     clipboardText(password);
   });
-  lengthDisplay.innerHTML = slider.value;
+
+  currentLength();
 };
 
 handleSubmit();
