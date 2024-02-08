@@ -13,7 +13,7 @@ export const theme = {
       yellow: "#F8CD65",
     },
     fontFamily: {
-      jetbrains: ['"JetBrainsMono"', "serif"],
+      jetbrains: ['"JetBrains Mono"', "sans-serif"],
     },
   },
 };
