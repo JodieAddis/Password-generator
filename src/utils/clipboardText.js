@@ -8,6 +8,6 @@ export const clipboardText = (password) => {
   //const test = "test de copie";
   copyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(password);
-    copiedText.innerHTML = "Copied !";
+    copiedText.innerHTML = "Copied";
   });
 };
