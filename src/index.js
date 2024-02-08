@@ -5,15 +5,16 @@ const handleSubmit = () => {
   const lowercaseChecked = document.getElementById("password-lowercase");
   const uppercaseChecked = document.getElementById("password-uppercase");
   const numbersChecked = document.getElementById("password-numbers");
-  console.log(numbersChecked);
   const symbolsChecked = document.getElementById("password-symbols");
   const form = document.querySelector(".form");
   const displayPassword = document.querySelector("#display-password");
+  const lengthDisplay = document.querySelector("#lengthDisplay");
+  const passwordLength = document.querySelector("#password-length");
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const password = generatePassword(
-      10,
+      passwordLength.value,
       lowercaseChecked.checked,
       uppercaseChecked.checked,
       numbersChecked.checked,
@@ -22,6 +23,7 @@ const handleSubmit = () => {
     displayPassword.innerHTML = password;
     clipboardText(password);
   });
+  lengthDisplay.innerHTML = slider.value;
 };
 
 handleSubmit();
