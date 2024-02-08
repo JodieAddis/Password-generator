@@ -1,6 +1,7 @@
 import { generatePassword } from "./utils/generatePassword.js";
 import { clipboardText } from "./utils/clipboardText.js";
 import { currentLength } from "./utils/currentLength.js";
+import { passwordStrength } from "./utils/passwordStrength.js";
 
 const handleSubmit = () => {
   const lowercaseChecked = document.getElementById("password-lowercase");
@@ -22,8 +23,8 @@ const handleSubmit = () => {
     );
     displayPassword.innerHTML = password;
     clipboardText(password);
+    passwordStrength();
   });
-
   currentLength();
 };
 
