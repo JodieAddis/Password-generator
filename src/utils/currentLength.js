@@ -5,10 +5,8 @@ export const currentLength = () => {
   const updateLengthValue = () => {
     lengthDisplay.textContent = inputLength.value;
   };
-
   inputLength.addEventListener("input", () => {
     updateLengthValue();
   });
-
   updateLengthValue();
 };
