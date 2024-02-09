@@ -7,79 +7,115 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="dist/output.css" />
   </head>
-  <body>
-    <main>
-      <h1 class="text-balticSea">Password Generator</h1>
-      <div>
-        <p>P4$5W0rD!</p>
-        <div>
-          <span></span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            heigh="8"
-            width="16"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"
-            />
-          </svg>
+  <body class="h-screen bg-darkBalticSea">
+    <main class="flex h-5/6 flex-col items-center justify-center">
+      <h1
+        class="text-jetbrains mb-4 self-center text-center text-2xl font-bold text-topaz"
+      >
+        Password Generator
+      </h1>
+      <div
+        class="mb-4 flex h-16 w-11/12 flex-row justify-between bg-balticSea px-4 text-mischka"
+      >
+        <p
+          id="display-password"
+          class="flex self-center text-2xl font-bold text-mischka"
+        ></p>
+        <div class="flex self-center">
+          <span
+            id="copiedText"
+            class="mr-2 text-lg font-bold uppercase text-mintGreen"
+          ></span>
+          <button id="copyBtn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              heigh="8"
+              width="16"
+              id="copyIcon"
+              class="cursor-pointer text-mintGreen hover:text-mischka"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"
+              />
+            </svg>
+          </button>
         </div>
       </div>
 
-      <form class="form">
-        <div class="form-group">
-          <label for="password-length">Character Length</label>
-
+      <form
+        class="form w-11/12 bg-balticSea px-4 py-4 capitalize text-mischka lg:h-1/2 lg:w-1/3"
+      >
+        <div class="form-group mb-8 flex flex-col">
+          <div class="flex flex-row justify-between">
+            <label for="password-length" class="mb-3 text-lg"
+              >Character Length</label
+            >
+            <p class="text-2xl font-bold text-mintGreen" id="lengthDisplay">
+              10
+            </p>
+          </div>
           <input
             type="range"
             min="0"
             max="20"
-            value="10"
+            value="5"
             id="password-length"
             name="password-length"
+            class="range-sm bg-darkBalticSea accent-mintGreen"
+            step="1"
           />
         </div>
-        <div class="form-group">
+        <div class="form-group mb-2">
           <input
             type="checkbox"
             id="password-uppercase"
             name="password-uppercase"
+            class="text-darkBalticSea accent-mintGreen"
           />
-          <label for="password-uppercase">include uppercase letters</label>
+          <label for="password-uppercase" class="ml-3"
+            >include uppercase letters</label
+          >
         </div>
-        <div class="form-group">
+        <div class="form-group mb-2">
           <input
             type="checkbox"
             id="password-lowercase"
             name="password-lowercase"
+            class="accent-mintGreen"
           />
-          <label for="password-lowercase">include lowercase letters</label>
+          <label for="password-lowercase" class="ml-3"
+            >include lowercase letters</label
+          >
         </div>
-        <div class="form-group">
+        <div class="form-group mb-2">
           <input
             type="checkbox"
             id="password-numbers"
             name="password-numbers"
+            class="accent-mintGreen"
           />
-          <label for="password-numbers">include numbers</label>
+          <label for="password-numbers" class="ml-3">include numbers</label>
         </div>
-        <div class="form-group">
+        <div class="form-group mb-5">
           <input
             type="checkbox"
             id="password-symbols"
             name="password-symbols"
+            class="rounded-none border-none accent-mintGreen"
           />
-          <label for="password-symbols">include symbols</label>
+          <label for="password-symbols" class="ml-3">include symbols</label>
         </div>
 
-        <div>
-          <p>strength</p>
+        <div
+          class="mb-4 flex h-16 justify-between bg-darkBalticSea px-4 text-lg font-bold uppercase text-topaz"
+        >
+          <p class="self-center">strength</p>
           <div>
             <span></span>
             <div>
@@ -91,11 +127,17 @@
           </div>
         </div>
 
-        <div>
-          <button type="submit" class="uppercase">Generate →</button>
+        <div class="flex justify-center">
+          <button
+            type="submit"
+            class="h-14 w-full bg-mintGreen text-center text-base font-bold uppercase text-darkBalticSea"
+            id="submit_btn"
+          >
+            Generate →
+          </button>
         </div>
       </form>
     </main>
-    <script src="src/index.js"></script>
+    <script type="module" src="src/index.js"></script>
   </body>
 </html>

@@ -1,26 +1,30 @@
-/**
- * Fonction qui génère mdp
- * @param {Number} length - Taille du mdp
- * @param {boolean} hasLowerCase - Minuscule dans le mdp
- * @param {boolean} hasUpperCase - Majuscule dans le mdp
- * @returns MDP
- */
-export const generateString = (length, hasLowerCase, hasUpperCase) => {
-  const lowercase = "abcdefghijklmnopqrstuvwxyz";
-  const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  let result = "";
-  let letters = "";
+import { generatePassword } from "./utils/generatePassword.js";
+import { clipboardText } from "./utils/clipboardText.js";
+import { currentLength } from "./utils/currentLength.js";
 
-  if (hasLowerCase) letters += lowercase;
-  if (hasUpperCase) letters += uppercase;
+const handleSubmit = () => {
+  const lowercaseChecked = document.getElementById("password-lowercase");
+  const uppercaseChecked = document.getElementById("password-uppercase");
+  const numbersChecked = document.getElementById("password-numbers");
+  const symbolsChecked = document.getElementById("password-symbols");
+  const form = document.querySelector(".form");
+  const displayPassword = document.querySelector("#display-password");
+  const passwordLength = document.querySelector("#password-length");
 
-  const charactersLength = letters.length;
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const password = generatePassword(
+      passwordLength.value,
+      lowercaseChecked.checked,
+      uppercaseChecked.checked,
+      numbersChecked.checked,
+      symbolsChecked.checked,
+    );
+    displayPassword.innerHTML = password;
+    clipboardText(password);
+  });
 
-  for (let i = 0; i < length; i++) {
-    result += letters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-
-  return result;
+  currentLength();
 };
 
-console.log(generateString(10, true, true));
+handleSubmit();
