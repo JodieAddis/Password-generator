@@ -1,6 +1,7 @@
 import { generatePassword } from "./utils/generatePassword.js";
 import { clipboardText } from "./utils/clipboardText.js";
 import { currentLength } from "./utils/currentLength.js";
+import { passwordStrength } from "./utils/passwordStrength.js";
 
 const handleSubmit = () => {
   const lowercaseChecked = document.getElementById("password-lowercase");
@@ -10,6 +11,7 @@ const handleSubmit = () => {
   const form = document.querySelector(".form");
   const displayPassword = document.querySelector("#display-password");
   const passwordLength = document.querySelector("#password-length");
+  const allCheckbox = document.querySelectorAll(".input_checkbox");
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -23,8 +25,13 @@ const handleSubmit = () => {
     displayPassword.innerHTML = password;
     clipboardText(password);
   });
-
   currentLength();
+
+  allCheckbox.forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+      passwordStrength();
+    });
+  });
 };
 
 handleSubmit();
