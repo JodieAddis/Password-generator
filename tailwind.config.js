@@ -1,3 +1,5 @@
+import plugin from "tailwindcss";
+
 /** @type {import('tailwindcss').Config} */
 export const content = ["index.html"];
 export const theme = {
@@ -17,4 +19,8 @@ export const theme = {
     },
   },
 };
-export const plugins = [];
+export const plugins = [
+  plugin(function ({ addVariant }) {
+    addVariant("first", "&:nth-child(1");
+  }),
+];
