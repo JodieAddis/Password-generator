@@ -9,22 +9,38 @@ const handleSubmit = () => {
   const numbersChecked = document.getElementById("password-numbers");
   const symbolsChecked = document.getElementById("password-symbols");
   const form = document.querySelector(".form");
-  const displayPassword = document.querySelector("#display-password");
-  const passwordLength = document.querySelector("#password-length");
+  const displayPassword = document.querySelector(
+    "#display-password",
+  ) as HTMLElement;
+  const passwordLength = (
+    document.querySelector("#password-length") as HTMLInputElement
+  ).value;
   const allCheckbox = document.querySelectorAll(".input_checkbox");
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const password = generatePassword(
-      passwordLength.value,
-      lowercaseChecked.checked,
-      uppercaseChecked.checked,
-      numbersChecked.checked,
-      symbolsChecked.checked,
-    );
-    displayPassword.innerHTML = password;
-    clipboardText(password);
-  });
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (
+        passwordLength &&
+        lowercaseChecked &&
+        uppercaseChecked &&
+        numbersChecked &&
+        symbolsChecked
+      ) {
+        const password = generatePassword(
+          //passwordLength.value,
+          passwordLength,
+          lowercaseChecked.checked,
+          uppercaseChecked.checked,
+          numbersChecked.checked,
+          symbolsChecked.checked,
+        );
+        displayPassword.innerHTML = password;
+        clipboardText(password);
+      }
+    });
+  }
+
   currentLength();
 
   allCheckbox.forEach((checkbox) => {

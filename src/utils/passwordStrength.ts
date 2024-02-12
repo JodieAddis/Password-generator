@@ -1,7 +1,8 @@
-export const passwordStrength = () => {
-  const inputCheckbox = document.querySelectorAll(".input_checkbox");
-  console.log(inputCheckbox);
-  const strength = document.querySelector("#strengthLevel");
+export const passwordStrength = (): void => {
+  const inputCheckbox = document.querySelectorAll(
+    ".input_checkbox",
+  ) as NodeListOf<HTMLInputElement>;
+  const strength = document.querySelector("#strengthLevel") as HTMLInputElement;
   const strengthDisplay = document.querySelector(".strength");
   const strengthContainer = document.querySelector(".strength_container");
 
@@ -17,7 +18,6 @@ export const passwordStrength = () => {
   if (count == 1) {
     console.log("Too weak !");
     strength.innerHTML = "too weak !";
-    document.querySelector(".strength").classList.add("bg-red");
   } else if (count == 2) {
     strength.innerHTML = "weak";
   } else if (count == 3) {
@@ -26,7 +26,3 @@ export const passwordStrength = () => {
     strength.innerHTML = "strong";
   }
 };
-
-/*
-document.querySelector('.div1').classList.add('bg-red-200');
-*/
