@@ -1,20 +1,28 @@
-import { generatePassword } from "./utils/generatePassword.js";
 import { clipboardText } from "./utils/clipboardText.js";
 import { currentLength } from "./utils/currentLength.js";
+import { generatePassword } from "./utils/generatePassword.js";
 import { passwordStrength } from "./utils/passwordStrength.js";
 
 const handleSubmit = () => {
-  const lowercaseChecked = document.getElementById("password-lowercase");
-  const uppercaseChecked = document.getElementById("password-uppercase");
-  const numbersChecked = document.getElementById("password-numbers");
-  const symbolsChecked = document.getElementById("password-symbols");
+  const lowercaseChecked = document.getElementById(
+    "password-lowercase",
+  ) as HTMLInputElement;
+  const uppercaseChecked = document.getElementById(
+    "password-uppercase",
+  ) as HTMLInputElement;
+  const numbersChecked = document.getElementById(
+    "password-numbers",
+  ) as HTMLInputElement;
+  const symbolsChecked = document.getElementById(
+    "password-symbols",
+  ) as HTMLInputElement;
   const form = document.querySelector(".form");
   const displayPassword = document.querySelector(
     "#display-password",
   ) as HTMLElement;
-  const passwordLength = (
-    document.querySelector("#password-length") as HTMLInputElement
-  ).value;
+  const passwordLength = document.querySelector(
+    "#password-length",
+  ) as HTMLInputElement;
   const allCheckbox = document.querySelectorAll(".input_checkbox");
 
   if (form) {
@@ -28,8 +36,7 @@ const handleSubmit = () => {
         symbolsChecked
       ) {
         const password = generatePassword(
-          //passwordLength.value,
-          passwordLength,
+          Number(passwordLength.value),
           lowercaseChecked.checked,
           uppercaseChecked.checked,
           numbersChecked.checked,
