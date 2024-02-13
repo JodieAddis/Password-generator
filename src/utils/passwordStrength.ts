@@ -17,12 +17,18 @@ export const passwordStrength = (): void => {
   }
   if (count == 1) {
     console.log("Too weak !");
+    //designer le container et designer les enfants
     strength.innerHTML = "too weak !";
+    strengthContainer?.classList.remove("strength");
+    strengthContainer?.classList.add("too_weak");
   } else if (count == 2) {
     strength.innerHTML = "weak";
   } else if (count == 3) {
     strength.innerHTML = "medium";
+    strength.classList.add("medium");
   } else if (count == 4) {
+    //designer strentgh directement
     strength.innerHTML = "strong";
+    strength.classList.add("strong");
   }
 };

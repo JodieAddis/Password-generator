@@ -8,4 +8,23 @@
   html {
     font-family: "JetBrains Mono", system-ui, sans-serif;
   }
+  html {
+    @apply h-full w-screen;
+  }
+}
+
+@layer components {
+  .too_weak {
+    @apply strength_container flex flex-row self-center first:border-2 first:border-solid first:border-red first:bg-red;
+  }
+  .strength_container > .too_weak:first-child,
+  .strength_container > .weak:nth-child(2) {
+    @apply border-2 border-solid border-coral bg-coral;
+  }
+  .medium {
+    @apply border-2 border-solid border-yellow bg-yellow last:border-mischka last:bg-mischka;
+  }
+  .strong {
+    @apply border-2 border-solid border-mintGreen bg-mintGreen;
+  }
 }
