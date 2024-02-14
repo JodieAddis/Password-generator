@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import {
   getInputElements,
   countCheckedInputs,
@@ -20,6 +20,20 @@ describe("countCheckedInputs Unit Test Suite", () => {
   });
 });
 
+/*
 describe("strengthLevel Unit Test Suite", () => {
-  it("should return something ", () => {});
+  it("should return something", () => {
+    const strength = {} as HTMLSpanElement;
+    const strengthContainer = {} as HTMLElement;
+    const strengthDisplay = {} as HTMLElement;
+
+    const result = strengthLevel(
+      3,
+      strength,
+      strengthContainer,
+      strengthDisplay,
+    );
+    expect(result).toBeDefined();
+  });
 });
+*/
