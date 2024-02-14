@@ -23,20 +23,22 @@ export const passwordStrength = (): void => {
     "medium",
   );
   strengthDisplay.classList.remove("strength");
-  if (count == 1) {
-    console.log("Too weak !");
-    //designer le container et designer les enfants
-    strength.innerHTML = "too weak !";
-    strengthContainer.classList.add("too_weak");
-  } else if (count == 2) {
-    strength.innerHTML = "weak";
-    strengthContainer.classList.add("weak");
-  } else if (count == 3) {
-    strength.innerHTML = "medium";
-    strengthContainer.classList.add("medium");
-  } else if (count == 4) {
-    //designer strentgh directement
-    strength.innerHTML = "strong";
-    strengthDisplay.classList.add("strong");
+  switch (count) {
+    case 1:
+      strength.innerHTML = "too weak !";
+      strengthContainer.classList.add("too_weak");
+      break;
+    case 2:
+      strength.innerHTML = "weak";
+      strengthContainer.classList.add("weak");
+      break;
+    case 3:
+      strength.innerHTML = "medium";
+      strengthContainer.classList.add("medium");
+      break;
+    case 4:
+      strength.innerHTML = "strong";
+      strengthDisplay.classList.add("strong");
+      break;
   }
 };
