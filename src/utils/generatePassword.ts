@@ -1,19 +1,12 @@
-/**
- * Fonction qui génère mdp
- * @param {Number} length - Number that define the length of the password
- * @param {boolean} hasLowerCase - Minuscule dans le mdp
- * @param {boolean} hasUpperCase - Majuscule dans le mdp
- * @param {boolean} hasNumber - Chiffres dans le mdp
- * @param {boolean} hasSymbols - Symbols dans le mdp
- * @returns MDP
- */
+import { InputType } from "../type/type.js";
+
 export const generatePassword = (
-  length,
-  hasLowerCase,
-  hasUpperCase,
-  hasNumbers,
-  hasSymbols,
-) => {
+  length: number,
+  hasLowerCase: boolean,
+  hasUpperCase: boolean,
+  hasNumbers: boolean,
+  hasSymbols: boolean,
+): string => {
   const lowercase = "abcdefghijklmnopqrstuvwxyz";
   const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const numbers = "0123456789";

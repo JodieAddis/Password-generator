@@ -8,4 +8,21 @@
   html {
     font-family: "JetBrains Mono", system-ui, sans-serif;
   }
+  html {
+    @apply h-full w-screen;
+  }
+}
+
+.too_weak {
+  @apply first:border-2 first:border-solid first:border-red first:bg-red;
+}
+.too_weak > .weak:first-child,
+.too_weak > .weak:nth-child(2) {
+  @apply border-2 border-solid border-coral bg-coral;
+}
+.medium {
+  @apply last:border-2 last:border-solid  last:border-yellow last:bg-yellow;
+}
+.strong {
+  @apply border-2 border-solid border-mintGreen bg-mintGreen;
 }
