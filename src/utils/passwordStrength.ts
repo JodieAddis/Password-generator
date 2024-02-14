@@ -3,8 +3,10 @@ export const passwordStrength = (): void => {
     ".input_checkbox",
   ) as NodeListOf<HTMLInputElement>;
   const strength = document.querySelector("#strengthLevel") as HTMLInputElement;
-  const strengthDisplay = document.querySelector(".strength");
-  const strengthContainer = document.querySelector(".strength_container");
+  const strengthDisplay = document.querySelector(".strength") as HTMLElement;
+  const strengthContainer = document.querySelector(
+    ".strength_container",
+  ) as HTMLElement;
 
   let count = 0;
 
@@ -12,23 +14,29 @@ export const passwordStrength = (): void => {
     if (inputCheckbox[i].checked == true) {
       count++;
       console.log(count);
-      //strength.innerHTML = count;
     }
   }
+  strengthContainer.classList.remove(
+    "strength_container",
+    "too_weak",
+    "weak",
+    "medium",
+  );
+  strengthDisplay.classList.remove("strength");
   if (count == 1) {
     console.log("Too weak !");
     //designer le container et designer les enfants
     strength.innerHTML = "too weak !";
-    strengthContainer?.classList.remove("strength");
-    strengthContainer?.classList.add("too_weak");
+    strengthContainer.classList.add("too_weak");
   } else if (count == 2) {
     strength.innerHTML = "weak";
+    strengthContainer.classList.add("weak");
   } else if (count == 3) {
     strength.innerHTML = "medium";
-    strength.classList.add("medium");
+    strengthContainer.classList.add("medium");
   } else if (count == 4) {
     //designer strentgh directement
     strength.innerHTML = "strong";
-    strength.classList.add("strong");
+    strengthDisplay.classList.add("strong");
   }
 };
