@@ -1,4 +1,3 @@
-/*
 export const passwordStrength = (): void => {
   const inputCheckbox = document.querySelectorAll(
     ".input_checkbox",
@@ -43,29 +42,13 @@ export const passwordStrength = (): void => {
       break;
   }
 };
-*/
 
-export const getInputElements = (): {
-  inputCheckbox: NodeListOf<HTMLInputElement>;
-  strength: HTMLInputElement;
-  strengthDisplay: HTMLElement;
-  strengthContainer: HTMLElement;
-} => {
+/*
+export const countCheckedInputs = (): number => {
   const inputCheckbox = document.querySelectorAll(
     ".input_checkbox",
   ) as NodeListOf<HTMLInputElement>;
-  const strength = document.querySelector("#strengthLevel") as HTMLInputElement;
-  const strengthDisplay = document.querySelector(".strength") as HTMLElement;
-  const strengthContainer = document.querySelector(
-    ".strength_container",
-  ) as HTMLElement;
 
-  return { inputCheckbox, strength, strengthDisplay, strengthContainer };
-};
-
-export const countCheckedInputs = (
-  inputCheckbox: HTMLInputElement[],
-): number => {
   let count = 0;
 
   for (let i = 0; i < inputCheckbox.length; i++) {
@@ -77,12 +60,12 @@ export const countCheckedInputs = (
   return count;
 };
 
-export const strengthLevel = (
-  count: number,
-  strength: HTMLSpanElement,
-  strengthContainer: HTMLElement,
-  strengthDisplay: HTMLElement,
-): void => {
+export const strengthLevel = (count: number): void => {
+  const strength = document.querySelector("#strengthLevel") as HTMLInputElement;
+  const strengthDisplay = document.querySelector(".strength") as HTMLElement;
+  const strengthContainer = document.querySelector(
+    ".strength_container",
+  ) as HTMLElement;
   switch (count) {
     case 1:
       strength.innerHTML = "too weak !";
@@ -102,3 +85,4 @@ export const strengthLevel = (
       break;
   }
 };
+*/
