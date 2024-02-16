@@ -1,28 +1,14 @@
-export const passwordStrength = (): void => {
-  const inputCheckbox = document.querySelectorAll(
-    ".input_checkbox",
-  ) as NodeListOf<HTMLInputElement>;
+export const strengthLevel = (count: number): void => {
   const strength = document.querySelector("#strengthLevel") as HTMLInputElement;
   const strengthDisplay = document.querySelector(".strength") as HTMLElement;
   const strengthContainer = document.querySelector(
     ".strength_container",
   ) as HTMLElement;
 
-  let count = 0;
-
-  for (let i = 0; i < inputCheckbox.length; i++) {
-    if (inputCheckbox[i].checked == true) {
-      count++;
-      console.log(count);
-    }
-  }
-  strengthContainer.classList.remove(
-    "strength_container",
-    "too_weak",
-    "weak",
-    "medium",
-  );
-  strengthDisplay.classList.remove("strength");
+  strengthContainer.classList.remove("too_weak");
+  strengthContainer.classList.remove("weak");
+  strengthContainer.classList.remove("medium");
+  strengthContainer.classList.remove("strong");
   switch (count) {
     case 1:
       strength.innerHTML = "too weak !";

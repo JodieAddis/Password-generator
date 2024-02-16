@@ -1,7 +1,8 @@
 import { clipboardText } from "./utils/clipboardText.js";
+import { countCheckedInputs } from "./utils/countCheckedInputs.js";
 import { currentLength } from "./utils/currentLength.js";
 import { generatePassword } from "./utils/generatePassword.js";
-import { passwordStrength } from "./utils/passwordStrength.js";
+import { strengthLevel } from "./utils/strengthLevel.js";
 
 const handleSubmit = () => {
   const lowercaseChecked = document.getElementById(
@@ -44,17 +45,12 @@ const handleSubmit = () => {
         );
         displayPassword.innerHTML = password;
         clipboardText(password);
+        const count = countCheckedInputs(password);
+        strengthLevel(count);
       }
     });
   }
-
   currentLength();
-
-  allCheckbox.forEach((checkbox) => {
-    checkbox.addEventListener("change", () => {
-      passwordStrength();
-    });
-  });
 };
 
 handleSubmit();
