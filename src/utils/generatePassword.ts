@@ -1,5 +1,3 @@
-import { InputType } from "../type/type.js";
-
 export const generatePassword = (
   length: number,
   hasLowerCase: boolean,
