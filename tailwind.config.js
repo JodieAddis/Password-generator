@@ -19,8 +19,3 @@ export const theme = {
     },
   },
 };
-export const plugins = [
-  plugin(function ({ addVariant }) {
-    addVariant("first", "&:nth-child(1");
-  }),
-];
