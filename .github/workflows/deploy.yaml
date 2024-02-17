@@ -20,3 +20,12 @@ jobs:
         with:
           node-version: 18
           cache: "npm"
+
+      - name: Install
+        run: npm i
+
+      - name: Linter
+        run: npm run linter
+
+      - name: Test
+        run: npm run test
