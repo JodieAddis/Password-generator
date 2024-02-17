@@ -2,19 +2,21 @@ name: Deploy to Github Pages
 
 on:
   pull_request:
-    branches: -main
-  push: 
-    branches: - dev
+    branches:
+      - main
+  push:
+    branches:
+      - dev
 
-jobs: 
+jobs:
   lint_and_test:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Checkout branch
         uses: action/checkout@v4
 
       - name: Install Node versions
         uses: actions/setup-node@v4
-        with: 
+        with:
           node-version: 18
           cache: "npm"
