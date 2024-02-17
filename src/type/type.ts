@@ -1,5 +1,5 @@
 export type InputType = {
-  length: Number;
+  length: number;
   hasLowerCase: boolean;
   hasUpperCase: boolean;
   hasNumbers: boolean;

@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect } from "vitest";
 import { countCheckedInputs } from "./countCheckedInputs";
 
 describe("strengthLevel Unit Test Suite", () => {

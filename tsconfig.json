@@ -6,6 +6,6 @@
     "strict": true,
     "noImplicitAny": true,
   },
-  "include": ["src", "dist/index.js"],
+  "include": ["src"],
   "exclude": ["node_modules/", "src/**/*.spec.ts"],
 }

@@ -24,7 +24,6 @@ const handleSubmit = () => {
   const passwordLength = document.querySelector(
     "#password-length",
   ) as HTMLInputElement;
-  const allCheckbox = document.querySelectorAll(".input_checkbox");
 
   if (form) {
     form.addEventListener("submit", (e) => {
