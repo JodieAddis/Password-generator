@@ -43,36 +43,36 @@ jobs:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
 
-  steps:
-    - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 18
-        cache: "npm"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
 
-    - run: npm i
+      - run: npm i
 
-    - name: Configure GH pages
-      uses: actions/configure-pages@v3
+      - name: Configure GH pages
+        uses: actions/configure-pages@v3
 
-    - name: Tailwind
-      run: npm run design
+      - name: Tailwind
+        run: npm run design
 
-    - name: Compile TS to JS
-      run: npm run compile
+      - name: Compile TS to JS
+        run: npm run compile
 
-    - name: Copy index.html in dist folder
-      run: cp index.html ./dist/
+      - name: Copy index.html in dist folder
+        run: cp index.html ./dist/
 
-    - name: Copy font to dist
-      run: cp -r ./public/font ./dist/public/font
+      - name: Copy font to dist
+        run: cp -r ./public/font ./dist/public/font
 
-    - name: Uploading Artifacts
-      uses: actions/uploard-pages-artifact@v2
-      with:
-        path: ./dist/
+      - name: Uploading Artifacts
+        uses: actions/uploard-pages-artifact@v2
+        with:
+          path: ./dist/
 
-    - name: Deploy to GH pages
-      uses: actions/deploy-pages@v1
-      id: deployment
+      - name: Deploy to GH pages
+        uses: actions/deploy-pages@v1
+        id: deployment
