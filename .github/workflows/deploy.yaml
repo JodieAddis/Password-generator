@@ -6,7 +6,7 @@ on:
       - main
   push:
     branches:
-      - dev
+      - develop
 
 jobs:
   lint_and_test:
