@@ -1,10 +1,10 @@
 {
   "scripts": {
     "dev:compile": "tsc --watch",
-    "dev:design": "npx tailwindcss -i ./public/style/tailwind.css -o ./dist/output.css --watch",
+    "dev:design": "npx tailwindcss -i ./public/style/tailwind.css -o ./dist/public/output.css --watch",
     "dev:formater": "prettier --write .",
     "compile": "tsc",
-    "design": "npx tailwindcss -i ./public/style/tailwind.css -o ./dist/output.css",
+    "design": "npx tailwindcss -i ./public/style/tailwind.css -o ./dist/public/output.css",
     "linter": "eslint --ignore-path .eslintignore --ext .ts .",
     "test": "vitest"
   },
