@@ -6,8 +6,8 @@ This application allows users to generate random passwords. These are generated 
 
 ## Objectives
 
-Creation of a password generator working with JavaScript, modules, and unit tests. The design is implemented using the Tailwind framework.
+Creation of a password generator working with Typescript, modules, and unit tests. The design is implemented using the Tailwind framework.
 
 ## Coding Technologies Used
 
- <img src="https://skillicons.dev/icons?i=git,html,css,tailwind,js"/>
+ <img src="https://skillicons.dev/icons?i=git,html,css,tailwind,ts"/>
