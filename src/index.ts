@@ -1,5 +1,5 @@
 import { clipboardText } from "./utils/clipboardText.js";
-import { countCheckedInputs } from "./utils/countCheckedInputs.js";
+import { calculatePasswordStrength } from "./utils/calculatePasswordStrength.js";
 import { currentLength } from "./utils/currentLength.js";
 import { generatePassword } from "./utils/generatePassword.js";
 import { strengthLevel } from "./utils/strengthLevel.js";
@@ -24,7 +24,6 @@ const handleSubmit = () => {
   const passwordLength = document.querySelector(
     "#password-length",
   ) as HTMLInputElement;
-  const allCheckbox = document.querySelectorAll(".input_checkbox");
 
   if (form) {
     form.addEventListener("submit", (e) => {
@@ -45,7 +44,7 @@ const handleSubmit = () => {
         );
         displayPassword.innerHTML = password;
         clipboardText(password);
-        const count = countCheckedInputs(password);
+        const count = calculatePasswordStrength(password);
         strengthLevel(count);
       }
     });
