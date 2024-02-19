@@ -10,4 +10,4 @@ Creation of a password generator working with Typescript, modules, and unit test
 
 ## Coding Technologies Used
 
- <img src="https://skillicons.dev/icons?i=git,html,css,tailwind,ts"/>
+ <img src="https://skillicons.dev/icons?i=git,html,tailwind,ts"/>
